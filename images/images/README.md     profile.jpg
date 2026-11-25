@@ -1,0 +1,6 @@
+images/
+    README.md
+    profile.jpg
+<img src="images/profile.jpg"
+     alt="Kenea Merga"
+     class="profile">
