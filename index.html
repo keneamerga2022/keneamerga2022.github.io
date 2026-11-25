@@ -10,9 +10,9 @@
 
 <style>
 
-</style>
 
-</style>
+
+
 }
 
 body {
@@ -148,6 +148,38 @@ a { overflow-wrap: anywhere; }
   main { padding: 12px; }
   section { padding: 20px; }
 }
+  /* CENTRE AND ANIMATE PROFILE PHOTO */
+.profile {
+  display: block;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 5px solid white;
+  margin: 0 auto 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  animation: floatingPhoto 4s ease-in-out infinite;
+}
+
+@keyframes floatingPhoto {
+  0% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile {
+    animation: none;
+  }
 </style>
 </head>
 
