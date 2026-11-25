@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -16,9 +16,19 @@ body {
   background: #f4f7fb;
   color: #263445;
   line-height: 1.7;
+/* PROFESSIONAL PAGES DROPDOWN MENU */
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
 nav {
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 190px;
   background: #102b46;
   padding: 16px 5%;
   display: flex;
@@ -26,11 +36,19 @@ nav {
   align-items: center;
   flex-wrap: wrap;
   gap: 12px;
+  border-radius: 8px;
+  padding: 8px;
+  z-index: 9999;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 nav h2 { color: white; }
 
 nav a {
+.dropdown-content a {
+  display: block;
+  padding: 10px 12px;
+  margin: 0;
   color: white;
   text-decoration: none;
   margin: 6px;
@@ -41,9 +59,12 @@ nav a:hover { color: #61c5e8; }
 
 .hero {
   background: linear-gradient(120deg,#102b46,#17638b);
+.dropdown-content a:hover {
+  background: #17638b;
   color: white;
   padding: 75px 20px;
   text-align: center;
+  border-radius: 5px;
 }
 
 .profile {
@@ -126,17 +147,27 @@ h3 { color: #17466b; }
   border-left: 3px solid #17638b;
   padding: 5px 0 20px 20px;
   margin: 15px 0;
+/* OPEN MENU ON MOUSE HOVER OR KEYBOARD FOCUS */
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  display: block;
 }
 
 footer {
   background: #102b46;
+.dropdown-label {
   color: white;
   padding: 25px;
   text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px;
+  display: inline-block;
 }
 
 a { overflow-wrap: anywhere; }
 
+/* MOBILE MENU */
 @media(max-width:650px) {
   nav { justify-content: center; }
   nav h2 { width: 100%; text-align: center; }
@@ -155,21 +186,29 @@ a { overflow-wrap: anywhere; }
   margin: 0 auto 20px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.25);
   animation: floatingPhoto 4s ease-in-out infinite;
+  .dropdown-content {
+    position: static;
+    min-width: 100%;
+  }
 }
 
 @keyframes floatingPhoto {
   0% {
     transform: translateY(0) rotate(-2deg);
   }
+<nav>
+  <h2>Kenea Merga</h2>
 
   50% {
     transform: translateY(-15px) rotate(2deg);
   }
+  <div class="navigation-links">
 
   100% {
     transform: translateY(0) rotate(-2deg);
   }
 }
+    <a href="index.html">Home</a>
 
 @media (prefers-reduced-motion: reduce) {
   .profile {
@@ -177,20 +216,34 @@ a { overflow-wrap: anywhere; }
   }
 </style>
 </head>
+    <div class="dropdown">
+      <span class="dropdown-label" tabindex="0">
+        Pages ▾
+      </span>
 
 <body>
+      <div class="dropdown-content">
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="experience.html">Experience</a>
+        <a href="education.html">Education</a>
+        <a href="projects.html">Projects</a>
+        <a href="certificates.html">Certificates</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
 
 <nav>
   <h2>Kenea Merga</h2>
   <div>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#projects">Projects</a>
-    <a href="#certificates">Certificates</a>
-    <a href="#contact">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="skills.html">Skills</a>
+    <a href="experience.html">Experience</a>
+    <a href="education.html">Education</a>
+    <a href="projects.html">Projects</a>
+    <a href="certificates.html">Certificates</a>
+    <a href="contact.html">Contact</a>
   </div>
 </nav>
 
@@ -203,15 +256,321 @@ a { overflow-wrap: anywhere; }
   <h3 style="color:white">
     IT Support | Administration | Data Management
   </h3>
+<section id="home-bio">
+  <h2>About Me</h2>
 
   <p>
     Technology, Digital Transformation, Information
     Management and Administrative Professional.
+    I am an IT and Management professional with more than
+    13 years of experience in IT support, administration,
+    data management and digital transformation.
+    I have worked in government institutions, development
+    organizations and the judicial administration sector.
   </p>
 
   <a class="btn" href="documents/Kenea_Merga_CV.pdf">
     Download My CV
+  <a href="about.html" class="btn">
+    Read My Full Biography
   </a>
+</section>
 
   <a class="btn" href="#contact">Contact Me</a>
-</header>
+<section id="gallery">
+  <h2>Professional Gallery</h2>
+
+<section id="skills">
+  <h2>Professional Skills</h2>
+  <p>
+    A collection of selected professional activities,
+    technology work, training and learning experiences.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>IT Support & Networking</h3>
+      <p>Hardware, software, Windows, LAN, Wi-Fi,
+      troubleshooting and ICT support.</p>
+    </div>
+  <div class="gallery-grid">
+
+    <div class="card">
+      <h3>Data Management</h3>
+      <p>Digital data collection, data quality,
+      validation, management and reporting.</p>
+    <div class="gallery-card">
+      <img src="images/it-training.jpg" alt="IT training">
+      <h3>IT and Technology</h3>
+    </div>
+
+    <div class="card">
+      <h3>Data Analysis</h3>
+      <p>Microsoft Excel, SQL, Power BI,
+      formulas, pivot tables and visualization.</p>
+    <div class="gallery-card">
+      <img src="images/workshop.jpg" alt="Professional workshop">
+      <h3>Professional Activities</h3>
+    </div>
+
+    <div class="card">
+      <h3>Digital Systems</h3>
+      <p>Integrated Financial Management System(IFMIS), Electronic Govermnet Procurement (e-GP), 
+       Fleet Management System (FMS), Ethics Asset Registration System (EARS), Integrated Civil Service Management System (ICSMIS), 
+        CommCare and information systems.</p>
+    <div class="gallery-card">
+      <img src="images/data-project.jpg" alt="Data management">
+      <h3>Data Management</h3>
+    </div>
+
+    <div class="card">
+    <div class="gallery-card">
+      <img src="images/office-work.jpg" alt="Office work">
+      <h3>Administration</h3>
+      <p>Executive support, correspondence,
+      scheduling, records and reporting.</p>
+    </div>
+
+    <div class="card">
+      <h3>Digital Transformation</h3>
+      <p>Technology adoption, digital workflows,
+      information management and innovation.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:25px">Technical Tools</h3>
+  <div class="skills" style="margin-top:15px">
+    <span>Excel</span>
+    <span>Power BI</span>
+    <span>SQL</span>
+    <span>KoboToolbox</span>
+    <span>ODK</span>
+    <span>CommCare</span>
+    <span>CSPro</span>
+    <span>SurveyCTO</span>
+    <span>IFMIS</span>
+    <span>e-GP</span>
+    <span>Microsoft 365</span>
+    <span>Networking</span>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Professional Experience</h2>
+
+  <div class="timeline-item">
+    <h3>Ethiopian Statistical Service (ESS)</h3>
+    <strong>Executive Secretary | Nov 2025 – Nov 2026</strong>
+    <p>Administrative coordination, executive support,
+    official correspondence, records management,
+    reporting and digital government systems.</p>
+  </div>
+
+  <div class="timeline-item">
+    <h3>Food for the Hungry (FH)</h3>
+    <strong>IT Support Facilitator | Apr 2024 – Jun 2025</strong>
+    <p>ICT support, digital data collection systems,
+    troubleshooting, technical assistance and user support.</p>
+  </div>
+
+  <div class="timeline-item">
+    <h3>Food for the Hungry (FH)</h3>
+    <strong>Data Clerk | Dec 2022 – Mar 2024</strong>
+    <p>Digital data entry, data validation,
+    information management and reporting.</p>
+  </div>
+
+  <div class="timeline-item">
+    <h3>Sigma.ai USA</h3>
+    <strong>Transcription Project Contractor | Aug 2024 – Feb 2025</strong>
+    <p>Multilingual transcription, categorization,
+    correction and quality validation.</p>
+  </div>
+
+  <div class="timeline-item">
+    <h3>High Court of East Wollega Zone</h3>
+    <strong>Audiovisual Technician | Jan 2019 – Dec 2022</strong>
+    <p>Audiovisual and technical support for
+    court-related recording activities.</p>
+  </div>
+
+  <div class="timeline-item">
+    <h3>High Court of East Wollega Zone</h3>
+    <strong>Video and Camera Man | Jul 2015 – Jan 2019</strong>
+    <p>Video recording and audiovisual services.</p>
+  </div>
+
+  <div class="timeline-item">
+    <h3>High Court of East Wollega Zone</h3>
+    <strong>Secretary | Oct 2013 – Jul 2015</strong>
+    <p>Secretarial and administrative support.</p>
+  </div>
+
+  <div class="timeline-item">
+    <h3>Jimma Arjo Woreda Court</h3>
+    <strong>Secretary of the President | Jul 2012 – Oct 2013</strong>
+    <p>Executive secretarial and office support.</p>
+  </div>
+</section>
+/* PROFESSIONAL GALLERY */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+<section id="education">
+  <h2>Education</h2>
+.gallery-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+  <div class="card">
+    <h3>Bachelor of Arts in Management</h3>
+    <p>Rift Valley University</p>
+    <p>Graduated: July 2019 | CGPA: 3.72</p>
+  </div>
+.gallery-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+  <div class="card" style="margin-top:15px">
+    <h3>Bachelor of Science in Computer Science</h3>
+    <p>Wollega University</p>
+    <p>Graduated: February 2017 | CGPA: 3.29</p>
+  </div>
+.gallery-card h3 {
+  text-align: center;
+  padding: 10px;
+  color: #17638b;
+}
+
+  <div class="card" style="margin-top:15px">
+    <h3>Advanced Diploma – Administrative Office
+    and Secretarial Technology</h3>
+    <p>Gida Ayana TVET Government Institute</p>
+    <p>Graduated: June 2011 | COC Certified</p>
+  </div>
+</section>
+@media(max-width:650px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+<section id="projects">
+  <h2>Projects & Professional Workflows</h2>
+<section id="highlights">
+  <h2>Professional Highlights</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Digital Data Collection</h3>
+      <p>KoboToolbox, ODK and CommCare
+      data collection and validation workflows.</p>
+    </div>
+
+    <div class="card">
+      <h3>Nature+ Activities</h3>
+      <p>Nature+ Baseline, Midline and Endine data
+      collection activities at Food for the Hungry.</p>
+      <h3>13+ Years Experience</h3>
+      <p>IT, administration and data management.</p>
+    </div>
+
+    <div class="card">
+      <h3>Data Analytics</h3>
+      <p>Demonstration of Excel, SQL and
+      Power BI reporting using sample data.</p>
+      <h3>Education</h3>
+      <p>BA Management and BSc Computer Science.</p>
+    </div>
+
+    <div class="card">
+      <h3>ICT Support</h3>
+      <p>Computer, software and network
+      troubleshooting workflows.</p>
+      <h3>Digital Systems</h3>
+      <p>CommCare, KoboToolbox, ODK and CSPro.</p>
+    </div>
+  </div>
+</section>
+
+<section id="certificates">
+  <h2>Certificates & Professional Training</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>ITIL 4</h3>
+      <p>IT Service Management</p>
+    </div>
+    <div class="card">
+      <h3>CCNA 200-301</h3>
+      <p>Networking Training</p>
+    </div>
+    <div class="card">
+      <h3>Power BI & SQL</h3>
+      <p>Data Analysis Training</p>
+    </div>
+    <div class="card">
+      <h3>Office 365 Administration</h3>
+      <p>Microsoft 365 Administration</p>
+    </div>
+    <div class="card">
+      <h3>YALI</h3>
+      <p>Young African Leaders Initiative</p>
+    </div>
+    <div class="card">
+      <h3>AI Agents for Business Applications</h3>
+      <p>Post Graduate Program</p>
+      <h3>Digital Transformation</h3>
+      <p>Interest in AI, automation and intelligent business solutions.</p>
+    </div>
+  </div>
+  <p style="margin-top:15px">
+    Additional professional development and
+    certificates can be added to this section.
+  </p>
+</section>
+
+<section id="gallery">
+  <h2>Professional Gallery</h2>
+  <p>Photos from professional activities,
+  training and projects can be displayed here.</p>
+  <p>Upload your approved photographs into
+  the images folder and add them to this section.</p>
+</section>
+  </div>
+
+<section id="contact">
+  <h2>Contact Me</h2>
+  <p>Email: keneamerga2022@gmail.com</p>
+  <p>Location: Ethiopia</p>
+  <p>
+    GitHub:
+    <a href="https://github.com/keneamerga2022">
+    github.com/keneamerga2022</a>
+  </p>
+  <p>
+    LinkedIn:
+    <a href="https://www.linkedin.com/in/kenea-merga-1637792a0/ ">My LinkedIn Profile</a>
+    <a href="experience.html">Explore My Experience</a> |
+    <a href="education.html">Explore My Education</a> |
+    <a href="skills.html">Explore My Skills</a>
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2026 Kenea Merga Beyene | Professional Portfolio</p>
+  <p>IT Support | Administration | Data Management</p>
+</footer>
+
+</body>
+</html>
